@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backend
+    container_name: ordura-backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=development
+    networks:
+      - ordura-net
+
+  frontend:
+    build: ./frontend
+    container_name: ordura-frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+    networks:
+      - ordura-net
+
+networks:
+  ordura-net:
+    driver: bridge
