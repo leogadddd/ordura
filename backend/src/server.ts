@@ -11,11 +11,11 @@ const prisma = new PrismaClient();
     credentials: true,
   });
 
-  app.get("/test-connection", async (req, reply) => {
+  app.get("/api/test-connection", async (request, reply) => {
     return { message: "Hello from Ordura API!" };
   });
 
   app.listen({ port: 8000, host: "0.0.0.0" }, () => {
     console.log("✅ Server running at http://localhost:8000");
   });
-})(); 
+})();

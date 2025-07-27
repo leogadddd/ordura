@@ -1,1 +1,1 @@
-export const API_BASE = "https://backend:8000";
+export const API_BASE = "http://localhost/api";
